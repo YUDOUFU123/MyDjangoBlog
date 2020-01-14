@@ -49,7 +49,10 @@ class Post(models.Model):
     body = models.TextField('正文')
 
     #这两个列分别表示文章的创建时间和最后一次的修改时间，存储时间的字段用DateTimeFidld类型
+    
+    
     created_time = models.DateTimeField('创建时间',default=timezone.now)
+    
     modified_time = models.DateTimeField('修改时间')
 
     #文章摘要，可以没有文章摘要，但默认情况下CharField要求我们必须存入数据，否则就会报错
@@ -78,6 +81,7 @@ class Post(models.Model):
     class Meta:
     	verbose_name = '文章'
     	verbose_name_plural = verbose_name
+    	ordering = ['-created_time']
 
     def __str__(self):
         return self.title
