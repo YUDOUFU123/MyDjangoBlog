@@ -1,2 +1,4 @@
 # MyDjangoBlog
-this is my blog with Django
+This is my blog with Django
+## What to do
+Is a small project for practice
