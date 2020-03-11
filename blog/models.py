@@ -78,6 +78,9 @@ class Post(models.Model):
     #Category类似
     author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE)
 
+
+    views = models.PositiveIntegerField(default=0, editable=False)
+
     class Meta:
     	verbose_name = '文章'
     	verbose_name_plural = verbose_name
@@ -108,6 +111,8 @@ class Post(models.Model):
 
     	super().save(*args, **kwargs)
     	
-
+    def increase_views(self):
+    	self.views += 1
+    	self.save(update_fields=['views'])
 
 
