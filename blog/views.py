@@ -60,7 +60,7 @@ class TagView(IndexView):
 		return super(TagView, self).get_queryset().filter(tags=t)
 		
 
-
+"""
 def detail(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 
@@ -80,9 +80,9 @@ def detail(request, pk):
 	post.toc = m.group(1) if m is not None else ''
 	
 	return render(request, 'blog/detail.html', context={'post':post})
+"""
 
 
-'''
 class PostDetailView(DetailView):
 	"""docstring for PostDetailView"""
 	model = Post
@@ -97,7 +97,7 @@ class PostDetailView(DetailView):
 		response = super(PostDetailView, self).get(request, *args, **kwargs)
 
 		#阅读量+1
-		self.objects.increase_views()
+		self.object.increase_views()
 		#视图必须返回一个HttpResponse对象
 		return response
 
@@ -113,5 +113,5 @@ class PostDetailView(DetailView):
 		m = re.search(r'<div class="toc">\s*<ul>(.*)</ul>\s*</div>',md.toc,re.S)
 		post.toc = m.group(1) if m is not None else ''
 		return post
-'''
+
 
