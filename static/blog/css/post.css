@@ -29,3 +29,14 @@
         }
 .post{background: rgba(255,255,255,0.1)}
 .widget{background: rgba(255,255,255,0.1)}
+
+#backtop{
+	background: url(//www.lgstatic.com/lg-www-fed/common/widgets/footer_c/modules/img/backtop-new_0e4bcbc.png) left top no-repeat);
+	width: 28px;
+	height: 46px;
+	position: fixed;
+	left: 50%;
+	bottom: 88px;
+	cursor: pointer;
+	z-index: 1002;
+}
